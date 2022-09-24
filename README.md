@@ -1,2 +1,3 @@
-# whist2
-Whist built with Godot
+# Whist
+
+Multi-player whist game built with Godot 3.5
