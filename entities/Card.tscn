@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/entities/card.gd" type="Script" id=1]
+[ext_resource path="res://entities/card.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards.png" type="Texture" id=2]
 
 [node name="Card" type="Node2D"]
-position = Vector2( 238, 523 )
+position = Vector2( 213, 514 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

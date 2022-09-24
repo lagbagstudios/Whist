@@ -1,0 +1,4 @@
+# Whist
+
+extends Node
+
