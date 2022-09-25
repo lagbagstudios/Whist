@@ -6,11 +6,14 @@
 [node name="Card" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_horizontal_guides_": [ 115.0 ],
+"_edit_vertical_guides_": [ 74.0 ]
 }
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 13
 vframes = 5

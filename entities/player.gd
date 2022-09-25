@@ -4,14 +4,26 @@ extends Node
 
 var Card = preload("res://entities/Card.tscn")
 
-export var hand = []
+var hand = []
 
-func display_cards():
+func add_cards() -> void:
 	for card in hand:
 		var c = Card.instance()
-		add_child(c)
 		c.set_card(card)
-		c.show()
+		$Cards.add_child(c)
+
+func get_left_card_x() -> int:
+	var screen_center = get_viewport().size.x / 2
+	var cards = $Cards.get_child_count()
+	var hand_size = (cards - 1) * 50 + 74
+	return screen_center - (hand_size / 2)
+
+func display_cards() -> void:
+	if $Cards.get_child_count() == 0:
+		add_cards()
+	for i in range($Cards.get_child_count()):
+		var card = $Cards.get_child(i)
+		card.position = Vector2(get_left_card_x() + (50 * i), 450)
 		
-func set_hand(h):
-	hand = h
+func set_hand(h) -> void:
+	hand = CardHelper.sort_hand(h)
