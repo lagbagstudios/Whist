@@ -1,4 +1,0 @@
-# Hand
-
-extends Node
-
