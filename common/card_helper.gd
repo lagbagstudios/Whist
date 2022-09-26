@@ -55,6 +55,7 @@ func sort_cards_desc(a: String, b: String) -> bool:
 	var a_val = DESC_SUITS[a[-1]] + get_card_val(a)
 	var b_val = DESC_SUITS[b[-1]] + get_card_val(b)
 	return a_val > b_val
-	
-func card_clicked(card: String) -> void:
-	print("Clicked card %s" % card)
+
+func remove_card(card: String) -> void:
+	hands[0].pop(card)
+	print(hands[0])

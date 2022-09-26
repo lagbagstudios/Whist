@@ -4,6 +4,8 @@ extends Node2D
 
 export var card: String = ""
 
+signal clicked
+
 func _ready() -> void:
 	var err = 0
 	err += $Button.connect("mouse_entered", self, "highlight")
@@ -26,4 +28,5 @@ func unhighlight() -> void:
 	$Sprite.offset.y += 30
 
 func clicked() -> void:
-	CardHelper.card_clicked(card)
+	emit_signal("clicked", card)
+	queue_free()
