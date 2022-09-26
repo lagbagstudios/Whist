@@ -6,6 +6,10 @@ var Card = preload("res://entities/Card.tscn")
 
 var hand = []
 
+func set_hand(h) -> void:
+	hand = CardHelper.sort_hand(h)
+	add_cards()
+
 func add_cards() -> void:
 	for card in hand:
 		var c = Card.instance()
@@ -19,11 +23,6 @@ func get_left_card_x() -> int:
 	return screen_center - (hand_size / 2)
 
 func display_cards() -> void:
-	if $Cards.get_child_count() == 0:
-		add_cards()
 	for i in range($Cards.get_child_count()):
 		var card = $Cards.get_child(i)
 		card.position = Vector2(get_left_card_x() + (50 * i), 450)
-		
-func set_hand(h) -> void:
-	hand = CardHelper.sort_hand(h)

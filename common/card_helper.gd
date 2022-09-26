@@ -29,14 +29,21 @@ func deal() -> void:
 		hands[i] = hand
 		print("Player ", i, " has hand ", hand)
 		
-func sort_hand(h) -> Array:
-	h.sort_custom(self, "sort_cards")
+func sort_hand(h: Array, dir: bool = false) -> Array:
+	if dir:
+		h.sort_custom(self, "sort_cards_dec")
+	else:
+		h.sort_custom(self, "sort_cards_asc")
+	print(h)
 	return h
 	
 func get_card_val(c: String) -> int:
 	return 14 if c.to_int() == 1 else c.to_int()
 
-func sort_cards(a: String, b: String, dir: bool = false) -> bool:
-	var a_val = SUITS[a[-1]] + get_card_val(a)
-	var b_val = SUITS[b[-1]] + get_card_val(b)
-	return a_val > b_val if dir else a_val < b_val
+func sort_cards_asc(a: String, b: String) -> bool:
+	var a_val = SUITS[a[-1]] + a.to_int()
+	var b_val = SUITS[b[-1]] + b.to_int()
+	return a_val < b_val
+	
+func sort_cards_dec(a: String, b: String) -> bool:
+	return CARDS.find(a) < CARDS.find(b)

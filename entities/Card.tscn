@@ -6,9 +6,7 @@
 [node name="Card" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_horizontal_guides_": [ 115.0 ],
-"_edit_vertical_guides_": [ 74.0 ]
+"_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -17,3 +15,12 @@ texture = ExtResource( 2 )
 centered = false
 hframes = 13
 vframes = 5
+
+[node name="Control" type="Control" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 72.0
+margin_bottom = 112.0
+
+[connection signal="mouse_entered" from="Control" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_mouse_exited"]
