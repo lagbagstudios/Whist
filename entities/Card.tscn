@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/entities/card.gd" type="Script" id=1]
+[ext_resource path="res://entities/card.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards.png" type="Texture" id=2]
 
 [node name="Card" type="Node2D"]
-position = Vector2( 238, 523 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -13,5 +12,13 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 13
 vframes = 5
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 72.0
+margin_bottom = 113.0
