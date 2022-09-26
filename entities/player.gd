@@ -7,7 +7,7 @@ var Card = preload("res://entities/Card.tscn")
 var hand = []
 
 func set_hand(h) -> void:
-	hand = CardHelper.sort_hand(h)
+	hand = CardHelper.sort_hand(h, false)
 	add_cards()
 
 func add_cards() -> void:
@@ -17,7 +17,7 @@ func add_cards() -> void:
 		$Cards.add_child(c)
 
 func get_left_card_x() -> int:
-	var screen_center = get_viewport().size.x / 2
+	var screen_center = ProjectSettings.get_setting("display/window/size/width") / 2
 	var cards = $Cards.get_child_count()
 	var hand_size = (cards - 1) * 50 + 74
 	return screen_center - (hand_size / 2)
@@ -25,4 +25,7 @@ func get_left_card_x() -> int:
 func display_cards() -> void:
 	for i in range($Cards.get_child_count()):
 		var card = $Cards.get_child(i)
-		card.position = Vector2(get_left_card_x() + (50 * i), 450)
+		card.position = Vector2(
+			get_left_card_x() + (50 * i), 
+			ProjectSettings.get_setting("display/window/size/height") - 150
+		)

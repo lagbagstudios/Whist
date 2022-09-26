@@ -16,11 +16,9 @@ centered = false
 hframes = 13
 vframes = 5
 
-[node name="Control" type="Control" parent="."]
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 72.0
-margin_bottom = 112.0
-
-[connection signal="mouse_entered" from="Control" to="." method="_mouse_entered"]
-[connection signal="mouse_exited" from="Control" to="." method="_mouse_exited"]
+margin_bottom = 113.0
