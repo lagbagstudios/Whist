@@ -3,6 +3,9 @@
 extends Node2D
 
 var card: String = "" setget set_card
+var sprite_rotation setget set_sprite_rotation
+var sprite_scale setget set_sprite_scale
+var sprite_centered setget set_sprite_centered
 
 var clickable = false
 
@@ -23,6 +26,15 @@ func set_card(c: String):
 		var sprite_frame = CardHelper.CARDS.find(c)
 		$Sprite.frame = 54 if sprite_frame < 0 else sprite_frame
 	card = c
+	
+func set_sprite_rotation(degrees: int) -> void:
+	$Sprite.rotation_degrees = degrees
+	
+func set_sprite_scale(s: float) -> void:
+	$Sprite.scale = Vector2(s, s)
+	
+func set_sprite_centered(center: bool) -> void:
+	$Sprite.centered = center
 
 func highlight() -> void:
 	if clickable:
