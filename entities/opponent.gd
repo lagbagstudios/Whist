@@ -1,15 +1,18 @@
+class_name Opponent
 extends Node2D
-
-var hand_len = []
 
 var Card = preload("res://entities/Card.tscn")
 
-func set_hand(h: Array) -> void:
-	hand_len = h.size()
-	var c = Card.instance()
-	add_child(c)
-	c.set_card("back")
+enum Seat {LEFT = 1, TOP = 2, RIGHT = 3}
 
-func show_hand() -> void:
-	for i in range(hand_len):
+export var seat = Seat.LEFT
+
+func display_cards() -> void:
+	if seat == Seat.LEFT:
+		pass 
+	if seat == Seat.TOP:
 		pass
+	if seat == Seat.RIGHT:
+		pass
+	for card in GameState.hands[seat]:
+		print(card.card)

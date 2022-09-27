@@ -22,18 +22,15 @@ const DESC_SUITS = {
 	"d": 0
 }
 
-var cards = CARDS.duplicate(false)
 var deck = []
-var hands = {}
 
-func shuffle() -> void:
+func deal() -> void:
+	var cards = CARDS.duplicate(false)
 	for i in cards.size():
 		deck.append(cards.pop_at(rand_range(0, cards.size())))
-		
-func deal() -> void:
 	for i in range(4):
 		var hand = CardHelper.deck.slice(12 * i, 12 * (i + 1))
-		hands[i] = hand
+		GameState.hands[i] = hand
 		print("Player ", i, " has hand ", hand)
 		
 func sort_hand(h: Array, dir: bool = false) -> Array:
@@ -42,9 +39,6 @@ func sort_hand(h: Array, dir: bool = false) -> Array:
 	else:
 		h.sort_custom(self, "sort_cards_asc")
 	return h
-	
-func get_card_val(c: String) -> int:
-	return 14 if c.to_int() == 1 else c.to_int()
 
 func sort_cards_asc(a: String, b: String) -> bool:
 	var a_val = ASC_SUITS[a[-1]] + get_card_val(a)
@@ -55,7 +49,10 @@ func sort_cards_desc(a: String, b: String) -> bool:
 	var a_val = DESC_SUITS[a[-1]] + get_card_val(a)
 	var b_val = DESC_SUITS[b[-1]] + get_card_val(b)
 	return a_val > b_val
+	
+func get_card_val(c: String) -> int:
+	return 14 if c.to_int() == 1 else c.to_int()
 
-func remove_card(card: String) -> void:
-	hands[0].pop(card)
-	print(hands[0])
+func remove_card(hand: int, card: String) -> void:
+	GameState.hands[hand].pop(card)
+	print(GameState.hands[hand])

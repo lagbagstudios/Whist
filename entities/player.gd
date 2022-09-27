@@ -4,16 +4,15 @@ extends Node
 
 var Card = preload("res://entities/Card.tscn")
 
-var hand = []
-
-func set_hand(h) -> void:
-	hand = CardHelper.sort_hand(h, false)
+func initialize_hand() -> void:
+	GameState.hands[0] = CardHelper.sort_hand(GameState.hands[0], false)
 	add_cards()
 
 func add_cards() -> void:
-	for card in hand:
+	for card in GameState.hands[0]:
 		var c = Card.instance()
-		c.set_card(card)
+		c.card = card
+		c.clickable = true
 		$Cards.add_child(c)
 
 func get_left_card_x() -> int:

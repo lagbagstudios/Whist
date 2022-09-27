@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Opponent",
+"language": "GDScript",
+"path": "res://entities/opponent.gd"
+} ]
+_global_script_class_icons={
+"Opponent": ""
+}
+
 [application]
 
 config/name="Whist"
@@ -16,7 +26,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-CardHelper="*res://common/card_helper.gd"
+CardHelper="*res://util/card_helper.gd"
+GameState="*res://util/game_state.gd"
 
 [display]
 
