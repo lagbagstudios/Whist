@@ -2,18 +2,23 @@
 
 extends Node2D
 
+class_name Card
+
 var card: String = "" setget set_card
 var sprite_rotation setget set_sprite_rotation
 var sprite_scale setget set_sprite_scale
+var highlighted_scale setget set_sprite_highlighted_scale
 var sprite_centered setget set_sprite_centered
 
 var clickable = false
 
+signal clicked
+
 func _ready() -> void:
 	var err = 0
-	err += $Button.connect("mouse_entered", self, "highlight")
-	err += $Button.connect("mouse_exited", self, "unhighlight")
-	err += $Button.connect("pressed", self, "clicked")
+	err += $Sprite/Button.connect("mouse_entered", self, "highlight")
+	err += $Sprite/Button.connect("mouse_exited", self, "unhighlight")
+	err += $Sprite/Button.connect("pressed", self, "clicked")
 	if err:
 		printerr("Something went wrong connecting card signals")
 
@@ -36,6 +41,9 @@ func set_sprite_scale(s: float) -> void:
 func set_sprite_centered(center: bool) -> void:
 	$Sprite.centered = center
 
+func set_sprite_highlighted_scale(s: float) -> void:
+	highlighted_scale = s
+
 func highlight() -> void:
 	if clickable:
 		$Sprite.scale = Vector2(0.6, 0.6)
@@ -47,5 +55,4 @@ func unhighlight() -> void:
 		$Sprite.offset.y += 30
 
 func clicked() -> void:
-	if clickable:
-		print("Clicked %s" % card)
+	emit_signal("clicked", self)

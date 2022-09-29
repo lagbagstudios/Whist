@@ -54,5 +54,4 @@ func get_card_val(c: String) -> int:
 	return 14 if c.to_int() == 1 else c.to_int()
 
 func remove_card(hand: int, card: String) -> void:
-	GameState.hands[hand].pop(card)
-	print(GameState.hands[hand])
+	GameState.hands[hand].pop_at(GameState.hands[hand].find(card))

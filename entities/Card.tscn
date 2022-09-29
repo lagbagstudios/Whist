@@ -12,15 +12,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-centered = false
 hframes = 13
 vframes = 5
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Sprite"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 72.0
-margin_bottom = 113.0
+margin_left = -70.0
+margin_top = -113.0
+margin_right = 70.0
+margin_bottom = 111.0
