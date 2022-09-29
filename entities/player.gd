@@ -28,6 +28,7 @@ func add_cards() -> void:
 		c.sprite_centered = true
 		c.sprite_scale = base_card_scale
 		c.highlighted_scale = highlighted_card_scale
+		c.highlight_offset = 10
 		$Cards.add_child(c)
 		c.connect("clicked", self, "_card_clicked")
 		c.connect("tree_exited", self, "display_cards")
