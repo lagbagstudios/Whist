@@ -5,18 +5,18 @@ extends Node
 func _ready() -> void:
 	randomize()
 	deal_hand()
-	Network.host()
+	draw_table()
 	if $Player.connect("card_clicked", self, "_card_clicked") != 0:
 		print("couldn't connect card_clicked from Player to _card_clicked in Whist")
 
-remotesync func deal_hand() -> void:
+func deal_hand() -> void:
 	CardHelper.deal()
 	$Player.initialize_hand()
 	for opponent in $Opponents.get_children():
 		opponent.initialize_cards()
 
 func _card_clicked(c: Card) -> void:
-	print("Whist saw card clicked %s" % c.card)
+	print("Clicked %s" % c.card)
 	CardHelper.remove_card(0, c.card)
 	c.queue_free()
 
