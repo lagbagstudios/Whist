@@ -29,7 +29,7 @@ func deal() -> void:
 	for i in cards.size():
 		deck.append(cards.pop_at(rand_range(0, cards.size())))
 	for i in range(4):
-		var hand = CardHelper.deck.slice(12 * i, 12 * (i + 1))
+		var hand = deck.slice(12 * i, 12 * (i + 1))
 		GameState.hands[i] = hand
 		print("Player ", i, " has hand ", hand)
 		

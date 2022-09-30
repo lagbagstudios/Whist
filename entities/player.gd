@@ -54,5 +54,4 @@ func calculate_card_height(i: int) -> float:
 	return screen_height - screen_buffer + curve_amount * (pow(i - $Cards.get_child_count() / 2.0, 2))
 	
 func _card_clicked(c: Card) -> void:
-	print("Player saw card clicked %s" % c.card)
 	emit_signal("card_clicked", c)

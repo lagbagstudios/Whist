@@ -10,6 +10,8 @@ func _ready() -> void:
 		print("couldn't connect card_clicked from Player to _card_clicked in Whist")
 	for opponent in $Opponents.get_children():
 		opponent.display_cards()
+	if WebsocketClient.connect("update_gamestate", self, "_update_game_state"):
+		print("error connecting update_gamestate signal")
 
 func deal_hand() -> void:
 	CardHelper.deal()
@@ -18,6 +20,11 @@ func deal_hand() -> void:
 		opponent.initialize_cards()
 
 func _card_clicked(c: Card) -> void:
-	print("Whist saw card clicked %s" % c.card)
-	CardHelper.remove_card(0, c.card)
-	c.queue_free()
+	print("Clicked %s" % c.card)
+	var event = {"clicked": c.card}
+	WebsocketClient.send_data(event)
+
+func _update_game_state(game_state: Dictionary) -> void:
+	print("updating gamestate from server %s" % str(game_state))
+	if "hands" in game_state:
+		GameState.hands = game_state["hands"]
