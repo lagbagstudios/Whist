@@ -34,6 +34,7 @@ config/icon="res://icon.png"
 
 CardHelper="*res://util/card_helper.gd"
 GameState="*res://util/game_state.gd"
+Network="*res://networking/network.gd"
 
 [display]
 
