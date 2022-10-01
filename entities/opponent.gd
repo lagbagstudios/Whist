@@ -1,11 +1,16 @@
-class_name Opponent
+# Opponent
+# Controller script for displaying opponents
+
 extends Node2D
+class_name Opponent
 
 var Card = preload("res://entities/Card.tscn")
 
 enum Seat {LEFT = 1, TOP = 2, RIGHT = 3}
 
 export var seat = Seat.LEFT
+
+var game_state_seat = 1
 
 var initial_sprite_rotation: int
 var initial_position: Vector2
@@ -27,7 +32,7 @@ var screen_center_x = ProjectSettings.get_setting("display/window/size/width") /
 var screen_center_y = ProjectSettings.get_setting("display/window/size/height") / 2
 
 func initialize_cards() -> void:
-	for card in GameState.hands[seat]:
+	for card in GameState.hands[game_state_seat]:
 		var c = Card.instance()
 		c.card = "back"
 		c.sprite_scale = card_scale

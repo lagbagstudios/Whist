@@ -1,6 +1,9 @@
-# Whist
+# game.gd
+# Handles actual gameplay, main script that controls everything within the game
 
 extends Node
+
+var player_seat = 0
 
 func _ready() -> void:
 	randomize()

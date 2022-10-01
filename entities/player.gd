@@ -1,4 +1,5 @@
-# Player
+# player.gd
+# Controller script for active player
 
 extends Node
 

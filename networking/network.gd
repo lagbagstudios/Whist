@@ -1,3 +1,6 @@
+# Network
+# Controller script for connecting to/hosting the server
+
 extends Node
 
 var peer
