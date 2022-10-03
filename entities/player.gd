@@ -5,11 +5,11 @@ extends Node
 
 var Card = preload("res://entities/Card.tscn")
 
-var screen_buffer = 40
-var spread_distance = 40
+var screen_buffer = 100
+var spread_distance = 80
 var curve_amount = 0.6
-var base_card_scale = 0.5
-var highlighted_card_scale = 0.6
+var base_card_scale = 1
+var highlighted_card_scale = 1.1
 var card_rotation_factor = 1.75
 
 var screen_height = ProjectSettings.get_setting("display/window/size/height")

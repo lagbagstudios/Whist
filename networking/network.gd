@@ -19,7 +19,8 @@ func host(port: int = DEFAULT_PORT) -> void:
 		printerr("Error hosting")
 	else:
 		print("Hosting game")
-	
+
+
 func join(ip: String, port: int = DEFAULT_PORT) -> void:
 	peer = WebSocketClient.new()
 	var err = peer.connect_to_url("%s:%d" % [ip, port])
@@ -28,8 +29,10 @@ func join(ip: String, port: int = DEFAULT_PORT) -> void:
 	else:
 		print("Joined game")
 
+
 func _player_connected(id: int) -> void:
 	print("Player connected %d" % id)
-	
+
+
 func _player_disconnected(id: int) -> void:
 	print("Player disconnected %d" % id)

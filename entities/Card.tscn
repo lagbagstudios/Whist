@@ -1,7 +1,67 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://entities/card.gd" type="Script" id=1]
-[ext_resource path="res://assets/cards.png" type="Texture" id=2]
+[ext_resource path="res://assets/cards_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/DefaultCards/3_of_clubs.png" type="Texture" id=4]
+[ext_resource path="res://assets/DefaultCards/3_of_diamonds.png" type="Texture" id=5]
+[ext_resource path="res://assets/DefaultCards/2_of_spades.png" type="Texture" id=6]
+[ext_resource path="res://assets/DefaultCards/2_of_diamonds.png" type="Texture" id=7]
+[ext_resource path="res://assets/DefaultCards/2_of_clubs.png" type="Texture" id=8]
+[ext_resource path="res://assets/DefaultCards/2_of_hearts.png" type="Texture" id=9]
+[ext_resource path="res://assets/DefaultCards/king_of_diamonds2.png" type="Texture" id=10]
+[ext_resource path="res://assets/DefaultCards/king_of_clubs2.png" type="Texture" id=11]
+[ext_resource path="res://assets/DefaultCards/king_of_hearts2.png" type="Texture" id=12]
+[ext_resource path="res://assets/DefaultCards/jack_of_spades2.png" type="Texture" id=13]
+[ext_resource path="res://assets/DefaultCards/jack_of_diamonds2.png" type="Texture" id=14]
+[ext_resource path="res://assets/DefaultCards/king_of_spades2.png" type="Texture" id=15]
+[ext_resource path="res://assets/DefaultCards/jack_of_clubs2.png" type="Texture" id=16]
+[ext_resource path="res://assets/DefaultCards/jack_of_hearts2.png" type="Texture" id=17]
+[ext_resource path="res://assets/DefaultCards/ace_of_hearts.png" type="Texture" id=18]
+[ext_resource path="res://assets/DefaultCards/4_of_clubs.png" type="Texture" id=19]
+[ext_resource path="res://assets/DefaultCards/9_of_spades.png" type="Texture" id=20]
+[ext_resource path="res://assets/DefaultCards/5_of_spades.png" type="Texture" id=21]
+[ext_resource path="res://assets/DefaultCards/3_of_hearts.png" type="Texture" id=22]
+[ext_resource path="res://assets/DefaultCards/9_of_diamonds.png" type="Texture" id=23]
+[ext_resource path="res://assets/DefaultCards/ace_of_spades.png" type="Texture" id=24]
+[ext_resource path="res://assets/DefaultCards/5_of_diamonds.png" type="Texture" id=25]
+[ext_resource path="res://assets/DefaultCards/7_of_diamonds.png" type="Texture" id=26]
+[ext_resource path="res://assets/DefaultCards/6_of_clubs.png" type="Texture" id=27]
+[ext_resource path="res://assets/DefaultCards/8_of_diamonds.png" type="Texture" id=28]
+[ext_resource path="res://assets/DefaultCards/8_of_hearts.png" type="Texture" id=29]
+[ext_resource path="res://assets/DefaultCards/10_of_clubs.png" type="Texture" id=30]
+[ext_resource path="res://assets/DefaultCards/5_of_clubs.png" type="Texture" id=31]
+[ext_resource path="res://assets/DefaultCards/10_of_spades.png" type="Texture" id=32]
+[ext_resource path="res://assets/DefaultCards/8_of_spades.png" type="Texture" id=33]
+[ext_resource path="res://assets/DefaultCards/6_of_spades.png" type="Texture" id=34]
+[ext_resource path="res://assets/DefaultCards/10_of_hearts.png" type="Texture" id=35]
+[ext_resource path="res://assets/DefaultCards/4_of_hearts.png" type="Texture" id=36]
+[ext_resource path="res://assets/DefaultCards/10_of_diamonds.png" type="Texture" id=37]
+[ext_resource path="res://assets/DefaultCards/7_of_clubs.png" type="Texture" id=38]
+[ext_resource path="res://assets/DefaultCards/3_of_spades.png" type="Texture" id=39]
+[ext_resource path="res://assets/DefaultCards/4_of_diamonds.png" type="Texture" id=40]
+[ext_resource path="res://assets/DefaultCards/8_of_clubs.png" type="Texture" id=41]
+[ext_resource path="res://assets/DefaultCards/9_of_hearts.png" type="Texture" id=42]
+[ext_resource path="res://assets/DefaultCards/7_of_hearts.png" type="Texture" id=43]
+[ext_resource path="res://assets/DefaultCards/6_of_hearts.png" type="Texture" id=44]
+[ext_resource path="res://assets/DefaultCards/6_of_diamonds.png" type="Texture" id=45]
+[ext_resource path="res://assets/DefaultCards/5_of_hearts.png" type="Texture" id=46]
+[ext_resource path="res://assets/DefaultCards/4_of_spades.png" type="Texture" id=47]
+[ext_resource path="res://assets/DefaultCards/7_of_spades.png" type="Texture" id=48]
+[ext_resource path="res://assets/DefaultCards/9_of_clubs.png" type="Texture" id=49]
+[ext_resource path="res://assets/DefaultCards/ace_of_clubs.png" type="Texture" id=50]
+[ext_resource path="res://assets/DefaultCards/ace_of_diamonds.png" type="Texture" id=51]
+[ext_resource path="res://assets/DefaultCards/queen_of_spades2.png" type="Texture" id=52]
+[ext_resource path="res://assets/DefaultCards/queen_of_clubs2.png" type="Texture" id=53]
+[ext_resource path="res://assets/DefaultCards/queen_of_diamonds2.png" type="Texture" id=54]
+[ext_resource path="res://assets/DefaultCards/queen_of_hearts2.png" type="Texture" id=55]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 53 ), ExtResource( 11 ), ExtResource( 50 ), ExtResource( 9 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 17 ), ExtResource( 55 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 6 ), ExtResource( 39 ), ExtResource( 47 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 48 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 52 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 37 ), ExtResource( 14 ), ExtResource( 54 ), ExtResource( 10 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Card" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,14 +71,19 @@ __meta__ = {
 "_edit_vertical_guides_": [ 74.0 ]
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="FirstCards" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 13
 vframes = 5
+frame = 49
 
-[node name="Button" type="Button" parent="Sprite"]
+[node name="Button" type="Button" parent="FirstCards"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -70.0
+margin_left = -71.0
 margin_top = -113.0
-margin_right = 70.0
-margin_bottom = 111.0
+margin_right = 72.0
+margin_bottom = 112.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 1 )
